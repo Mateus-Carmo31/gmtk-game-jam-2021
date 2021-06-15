@@ -6,7 +6,7 @@
 
 By: Mateus Carmo de Oliveira
 
-Font used: "da mad rave" by darrell Flood
+Font used: "da mad rave" by Darrell Flood
 
 UI assets and SFX: Kenney (Kenney.nl)
 
