@@ -12,4 +12,4 @@ UI assets and SFX: Kenney (Kenney.nl)
 
 Music by cynicmusic
 
-Made with Godot Engine 3.2.3
+Made with Godot Engine 3.2.3 ([License](https://godotengine.org/license))
