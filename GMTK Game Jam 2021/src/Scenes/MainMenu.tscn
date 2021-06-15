@@ -1,0 +1,538 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Da Mad Rave.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/Scripts/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://assets/Audio/menu_select.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/Misc/level_button_hover.tres" type="StyleBox" id=4]
+[ext_resource path="res://assets/Misc/level_button_disabled.tres" type="StyleBox" id=5]
+[ext_resource path="res://assets/Misc/level_button_pressed.tres" type="StyleBox" id=6]
+[ext_resource path="res://assets/Misc/level_button_normal.tres" type="StyleBox" id=7]
+[ext_resource path="res://assets/Images/title.png" type="Texture" id=8]
+[ext_resource path="res://assets/Images/logo.png" type="Texture" id=9]
+[ext_resource path="res://assets/Music/007_Synthwave_421k.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/Images/bg.png" type="Texture" id=11]
+[ext_resource path="res://assets/Misc/panorama_shader.tres" type="Material" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Credits Off"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("CreditsButton:rect_rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Credits On"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("CreditsButton:rect_rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 90.0 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Title:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 315.412, -319.898 ), Vector2( 315.412, 10.1021 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("LevelButtons:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 724 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EndGameScreen:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 724 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Title:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 315.412, 10.1021 ), Vector2( 315.412, -319.898 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("LevelButtons:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 724 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EndGameScreen:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 724 ) ]
+}
+
+[node name="Main Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 0.00115967
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 315.412
+margin_top = 10.1021
+margin_right = -364.588
+margin_bottom = -413.898
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButtons" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -0.000915527
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="LevelButtons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 305.818
+margin_top = 341.668
+margin_right = -866.182
+margin_bottom = -292.332
+rect_min_size = Vector2( 108, 90 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 1 )
+text = "00"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button1" type="Button" parent="LevelButtons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 434.397
+margin_top = 341.668
+margin_right = -737.603
+margin_bottom = -292.332
+rect_min_size = Vector2( 108, 90 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 1 )
+text = "01"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="LevelButtons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 561.533
+margin_top = 341.668
+margin_right = -610.467
+margin_bottom = -292.332
+rect_min_size = Vector2( 108, 90 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 1 )
+text = "02"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="LevelButtons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 687.609
+margin_top = 341.668
+margin_right = -484.391
+margin_bottom = -292.332
+rect_min_size = Vector2( 108, 90 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 1 )
+text = "03"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="LevelButtons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 811.566
+margin_top = 341.668
+margin_right = -360.434
+margin_bottom = -292.332
+rect_min_size = Vector2( 108, 90 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 1 )
+text = "04"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="Button" parent="LevelButtons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 305.818
+margin_top = 459.407
+margin_right = -866.182
+margin_bottom = -174.593
+rect_min_size = Vector2( 108, 90 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 1 )
+text = "05"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button6" type="Button" parent="LevelButtons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 434.397
+margin_top = 459.407
+margin_right = -737.603
+margin_bottom = -174.593
+rect_min_size = Vector2( 108, 90 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 1 )
+text = "06"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button7" type="Button" parent="LevelButtons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 561.533
+margin_top = 459.407
+margin_right = -610.467
+margin_bottom = -174.593
+rect_min_size = Vector2( 108, 90 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 1 )
+text = "07"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button8" type="Button" parent="LevelButtons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 687.609
+margin_top = 459.407
+margin_right = -484.391
+margin_bottom = -174.593
+rect_min_size = Vector2( 108, 90 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 1 )
+text = "08"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button9" type="Button" parent="LevelButtons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 811.566
+margin_top = 459.407
+margin_right = -360.434
+margin_bottom = -174.593
+rect_min_size = Vector2( 108, 90 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 1 )
+text = "09"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button10" type="Button" parent="LevelButtons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 305.818
+margin_top = 573.571
+margin_right = -866.182
+margin_bottom = -60.4292
+rect_min_size = Vector2( 108, 90 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 1 )
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button11" type="Button" parent="LevelButtons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 434.397
+margin_top = 573.571
+margin_right = -737.603
+margin_bottom = -60.4292
+rect_min_size = Vector2( 108, 90 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 1 )
+text = "11"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button12" type="Button" parent="LevelButtons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 562.0
+margin_top = 574.0
+margin_right = -610.0
+margin_bottom = -60.0002
+rect_min_size = Vector2( 108, 90 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 1 )
+text = "12"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button13" type="Button" parent="LevelButtons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 688.0
+margin_top = 574.0
+margin_right = -484.0
+margin_bottom = -60.0002
+rect_min_size = Vector2( 108, 90 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 1 )
+text = "13"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button14" type="Button" parent="LevelButtons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 811.566
+margin_top = 574.0
+margin_right = -360.434
+margin_bottom = -60.0002
+rect_min_size = Vector2( 108, 90 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 1 )
+text = "14"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Credits"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 177.384
+margin_top = 313.476
+margin_right = -199.616
+margin_bottom = -208.524
+custom_fonts/font = SubResource( 2 )
+text = "Game by Mateus Carmo (@carmo_no_Sadame)
+
+Font: \"da mad rave\" by darrell Flood
+
+UI assets and SFX: Kenney (Kenney.nl)
+
+Music By cynicmusic"
+align = 1
+valign = 1
+
+[node name="EndGameScreen" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 0.000305176
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="EndGameScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 177.384
+margin_top = 313.476
+margin_right = -199.616
+margin_bottom = -208.524
+custom_fonts/font = SubResource( 3 )
+text = "Thank you for playing my game!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="CreditsButton" type="TextureButton" parent="."]
+modulate = Color( 0.909804, 0.909804, 0.909804, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1117.22
+margin_top = 561.086
+margin_right = -2.78003
+margin_bottom = -2.91382
+rect_pivot_offset = Vector2( 80, 80 )
+toggle_mode = true
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
+texture_disabled = ExtResource( 9 )
+texture_focused = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -5.0
+autoplay = true
+bus = "Music"
+
+[node name="MenuSelectSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Entry"
+"anims/Credits Off" = SubResource( 4 )
+"anims/Credits On" = SubResource( 5 )
+anims/Entry = SubResource( 6 )
+anims/Exit = SubResource( 7 )
+
+[node name="BG" type="TextureRect" parent="."]
+modulate = Color( 0.431373, 0.431373, 0.431373, 1 )
+show_behind_parent = true
+material = ExtResource( 12 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="CreditsButton" to="." method="button_click"]
+[connection signal="toggled" from="CreditsButton" to="." method="_on_CreditsButton_toggled"]

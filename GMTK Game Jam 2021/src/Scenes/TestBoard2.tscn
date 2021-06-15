@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Scripts/BoardHandler.gd" type="Script" id=2]
+[ext_resource path="res://src/Scenes/Block.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Scenes/Immovable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Scenes/Slot.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Scenes/Camera.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Board.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://assets/Mats/Board.tres" type="Material" id=8]
+
+[sub_resource type="SpatialMaterial" id=3]
+resource_local_to_scene = true
+albedo_color = Color( 0.254902, 0.254902, 0.254902, 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+resource_local_to_scene = true
+albedo_color = Color( 0.254902, 0.254902, 0.254902, 1 )
+
+[node name="TestBoard" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="BoardWalls" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5 )
+
+[node name="Ground" type="MeshInstance" parent="BoardWalls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = ExtResource( 7 )
+material/0 = ExtResource( 8 )
+
+[node name="Blocks" type="Spatial" parent="."]
+
+[node name="Immovable" parent="Blocks" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 5 )
+material/0 = SubResource( 3 )
+
+[node name="Immovable2" parent="Blocks" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 4 )
+material/0 = SubResource( 4 )
+
+[node name="Block" parent="Blocks" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 5 )
+
+[node name="Block2" parent="Blocks" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 5 )
+invert_direction = true
+
+[node name="Block3" parent="Blocks" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 6 )
+
+[node name="Slots" type="Spatial" parent="."]
+
+[node name="Slot2" parent="Slots" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 5 )
+
+[node name="Slot3" parent="Slots" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 5 )
+
+[node name="Slot" parent="Slots" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 6 )
+
+[node name="Camera" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.984808, 0.0976848, -0.143566, 0, 0.826766, 0.562545, 0.173648, -0.553999, 0.814206, 8, 6, 12.304 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.548894, -0.549235, 0.630124, 0.416995, 0.473415, 0.775883, -0.724452, 0.688636, -0.030826, 0, 3.89959, 0 )

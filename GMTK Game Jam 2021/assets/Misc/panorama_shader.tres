@@ -1,0 +1,30 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float mid = 0.5;
+uniform float angle = 0;
+uniform float speed = 5;
+
+vec2 rotateUV(vec2 uv, float rotation)
+{
+    return vec2(
+        cos(rotation) * (uv.x - mid) + sin(rotation) * (uv.y - mid) + mid,
+        cos(rotation) * (uv.y - mid) - sin(rotation) * (uv.x - mid) + mid
+    );
+}
+
+void fragment()
+{
+	vec2 uv = UV;
+	uv = rotateUV(uv, angle);
+	uv = vec2(uv.x + TIME * speed / 100f, uv.y);
+	COLOR = texture(TEXTURE, uv);
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/mid = -1.302
+shader_param/angle = -0.142
+shader_param/speed = 5.0

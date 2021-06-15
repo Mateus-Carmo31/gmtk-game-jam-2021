@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/Audio/block_select.ogg" type="AudioStream" id=1]
+[ext_resource path="res://assets/Audio/block_push.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/Audio/player_move.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/Audio/block_deselect.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/Audio/slot_active.ogg" type="AudioStream" id=5]
+
+[node name="SFX" type="Node"]
+
+[node name="BlockPushSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "SFX"
+
+[node name="BlockSelectSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -4.0
+bus = "SFX"
+
+[node name="BlockDeselectSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "SFX"
+
+[node name="PlayerMoveSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "SFX"
+
+[node name="SlotActiveSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "SFX"

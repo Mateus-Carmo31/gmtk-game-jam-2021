@@ -1,0 +1,118 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Scripts/BoardHandler.gd" type="Script" id=2]
+[ext_resource path="res://src/Scenes/Block.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Scenes/Immovable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Scenes/Slot.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Scenes/SFX.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Scenes/BoardWalls.tscn" type="PackedScene" id=7]
+
+[node name="TestBoard" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="BoardWalls" parent="." instance=ExtResource( 7 )]
+
+[node name="Immovables" type="Spatial" parent="."]
+
+[node name="Immovable" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5 )
+
+[node name="Immovable2" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 5 )
+
+[node name="Immovable3" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 7 )
+
+[node name="Immovable4" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 7 )
+
+[node name="Immovable5" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6 )
+
+[node name="Immovable17" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 5 )
+
+[node name="Immovable18" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 4 )
+
+[node name="Immovable19" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 2 )
+
+[node name="Immovable24" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3 )
+
+[node name="Immovable25" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 3 )
+
+[node name="Immovable26" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4 )
+
+[node name="Immovable27" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 4 )
+
+[node name="Immovable28" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2 )
+
+[node name="Immovable29" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 2 )
+
+[node name="Immovable20" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4 )
+
+[node name="Immovable21" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4 )
+
+[node name="Immovable22" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 5 )
+
+[node name="Immovable23" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 4 )
+
+[node name="Immovable6" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 7 )
+
+[node name="Immovable9" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 7 )
+
+[node name="Immovable11" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 7 )
+
+[node name="Immovable13" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 7 )
+
+[node name="Immovable15" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 7 )
+
+[node name="Immovable16" parent="Immovables" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 6 )
+
+[node name="Blocks" type="Spatial" parent="."]
+
+[node name="Block" parent="Blocks" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 6 )
+
+[node name="Block2" parent="Blocks" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6 )
+
+[node name="Block3" parent="Blocks" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5 )
+
+[node name="Slots" type="Spatial" parent="."]
+
+[node name="Spatial" parent="Slots" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5 )
+
+[node name="Spatial2" parent="Slots" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 5 )
+
+[node name="Spatial3" parent="Slots" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 6 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.548894, -0.549235, 0.630124, 0.416995, 0.473415, 0.775883, -0.724452, 0.688636, -0.030826, 0, 3.89959, 0 )
+
+[node name="SFX" parent="." instance=ExtResource( 6 )]

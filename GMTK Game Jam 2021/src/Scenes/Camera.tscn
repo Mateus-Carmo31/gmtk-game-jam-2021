@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Scripts/Camera.gd" type="Script" id=1]
+
+[node name="Camera" type="Camera"]
+transform = Transform( 1, 0, 0, 0, 0.707106, 0.707106, 0, -0.707106, 0.707106, 7, 9, 13 )
+projection = 1
+fov = 50.9
+size = 14.0
+script = ExtResource( 1 )
