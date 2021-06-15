@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/Scripts/GameHandler.gd" type="Script" id=1]
 [ext_resource path="res://src/Scenes/Camera.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Da Mad Rave.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/Misc/Da Mad Rave.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/Audio/reset_level.ogg" type="AudioStream" id=4]
 [ext_resource path="res://assets/Audio/return_to_main_menu.ogg" type="AudioStream" id=5]
 [ext_resource path="res://assets/Audio/level_completed.ogg" type="AudioStream" id=6]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/Images/next_level.png" type="Texture" id=10]
 [ext_resource path="res://assets/Images/bg.png" type="Texture" id=11]
 [ext_resource path="res://assets/Misc/panorama_shader.tres" type="Material" id=12]
+
 
 [sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 9 )
